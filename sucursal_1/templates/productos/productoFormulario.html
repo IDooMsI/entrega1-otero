@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Crear producto{% endblock%}
+{% block section %}
+    <p>Formulario de producto</p>
+    {% if form.errors%}
+        <p style="color:red;">Algunos datos estan mal</p>
+    {% endif %}
+    <form action="" method="POST">{% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit", value="Crear">
+    </form>
+{% endblock %}
