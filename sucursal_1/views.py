@@ -23,7 +23,7 @@ def productoFormulario(request):
         print(form)
         if form.is_valid:
             data = form.cleaned_data
-            producto = Producto(cantidad = data['cantidad'], precio = data['precio'], descripcion = data['descripcion'])
+            producto = Producto(nombre = data['nombre'], cantidad = data['cantidad'], precio = data['precio'], descripcion = data['descripcion'])
             producto.save()
 
             return render(request, 'productos/lista.html')
@@ -36,5 +36,12 @@ def getProductos(request):
     return render(request, "productos/getProductos.html")
 
 def buscar(request):
-    response = f'Estoy buscando el producto: {request.GET["nombre"]}'
+    if request.GET['nombre']:
+        nombre =  request.GET['nombre']
+        productos = Producto.objects.filter(nombre__icontains=nombre)
+        totalResultados = len(productos)
+        return render(request, 'productos/resultadoBusqueda.html', {'nombre': nombre, 'productos':productos, 'totalResultados': totalResultados })
+    else:
+        response = 'No enviaste datos'
+
     return HttpResponse(response)

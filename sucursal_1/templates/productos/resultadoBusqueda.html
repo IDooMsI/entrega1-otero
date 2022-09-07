@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Index{% endblock%}
+{% block section %}
+    <h3>Estamos buscando productos con nombre: {{nombre}}</h3>
+    {% if productos %}
+        <p><b>Total de Resulstados: {{ totalResultados }}</b></p>
+            {% for producto in productos %}
+                <p>Nombre: <b>{{ producto.nombre }}</b></p>
+                <p>Descripcion: <b>{{ producto.descripcion }}</b></p>
+                <p>Precio: <b>{{ producto.precio }}</b></p>
+                <p>Sock: <b>{{ producto.cantidad }} unidades</b></p>
+            <p><b>-------------------------------------------------</b></p>
+            {% endfor %}
+    {% else %}
+        <h3>No se encontraron resultados</h3>
+    {% endif %}
+{% endblock %}
