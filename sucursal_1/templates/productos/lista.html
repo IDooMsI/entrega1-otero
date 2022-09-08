@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Listado de productos{% endblock%}
+{% block title %} Panel de productos{% endblock%}
 {% block section %}
-    <p>listado de productos</p>
+<h3>Bienvenido al panel de productos</h3>
+<a href="{% url 'productoFormulario' %}">Crear</a>
+<a href="{% url 'getProductos' %}">Buscar</a>
 {% endblock %}

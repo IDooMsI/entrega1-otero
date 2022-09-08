@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Buscar Administrador{% endblock%}
+{% block section %}
+    <form action="/sucursal_1/buscar/admin" method="GET">
+        <input type="text" name="nombre" id="nombre" placeholder="Busqueda por nombre">
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock %}

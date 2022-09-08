@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %} Listado de usuarios{% endblock%}
+{% block title %} Panel de Usuarios{% endblock%}
 {% block section %}
-    <p>listado de usuarios</p>
+<h3>Bienvenido al panel de usuarios</h3>
+<a href="{% url 'usuarioFormulario' %}">Crear</a>
+<a href="{% url 'getUsuarios' %}">Buscar</a>
 {% endblock %}

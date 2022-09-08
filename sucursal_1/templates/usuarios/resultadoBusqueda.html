@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Index{% endblock%}
+{% block section %}
+    <h3>Estamos buscando usuarios con nombre: {{nombre}}</h3>
+    {% if usuarios %}
+        <p><b>Total de Resulstados: {{ totalResultados }}</b></p>
+            {% for usuario in usuarios %}
+                <p>Nombre: <b>{{ usuario.nombre }}</b></p>
+                <p>Apellido: <b>{{ usuario.apellido }}</b></p>
+                <p>Edad: <b>{{ usuario.edad }}</b></p>
+                <p>Sexo: <b>{{ usuario.sexo }}</b></p>
+                <p><b>-------------------------------------------------</b></p>
+            {% endfor %}
+    {% else %}
+        <h3>No se encontraron resultados</h3>
+    {% endif %}
+{% endblock %}

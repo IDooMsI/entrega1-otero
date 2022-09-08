@@ -15,9 +15,9 @@
     <nav>
         <ul>
             <a href="{% url 'Index' %}">Index</a>
-            <a href="{% url 'ListaDeProductos' %}">Productos</a>
-            <a href="{% url 'ListaDeUsuarios' %}">Usuarios</a>
-            <a href="{% url 'getProductos' %}">Buscar</a>
+            <a href="{% url 'panelProductos' %}">Productos</a>
+            <a href="{% url 'panelUsuarios' %}">Usuarios</a>
+            <a href="{% url 'panelAdmin' %}">Administradores</a>
         </ul>
     </nav>
     {% block section %}{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Panel de Administradores{% endblock%}
+{% block section %}
+<h3>Bienvenido al panel de administradores</h3>
+<a href="{% url 'adminFormulario' %}">Crear</a>
+<a href="{% url 'getAdmins' %}">Buscar</a>
+{% endblock %}

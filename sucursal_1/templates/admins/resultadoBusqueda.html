@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Index{% endblock%}
+{% block section %}
+    <h3>Estamos buscando administradores con nombre: {{nombre}}</h3>
+    {% if admins %}
+        <p><b>Total de Resulstados: {{ totalResultados }}</b></p>
+            {% for admin in admins %}
+                <p>Nombre: <b>{{ admin.nombre }}</b></p>
+                <p>Nivel: <b>{{ admin.nivel }}</b></p>
+                <p>Sueldo: <b>{{ admin.sueldo }}</b></p>
+                <p><b>-------------------------------------------------</b></p>
+            {% endfor %}
+    {% else %}
+        <h3>No se encontraron resultados</h3>
+    {% endif %}
+{% endblock %}
